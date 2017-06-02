@@ -1,0 +1,36 @@
+h1{
+  text-align: center;
+ 
+  font-family:Times,serif;
+  font-size: 210%;
+  font-weight: bold;
+  color:#EC2727;
+ 
+}
+div.wrap{
+	text-align: center;
+	
+}
+div.overall{
+	background-color: #2CE2F8
+}
+p
+{
+	font-size: 120%;
+	font-family: Georgia;
+line-height: 200%;
+
+}
+button{
+
+	width:150px;
+	height:75px;
+}
+input{
+	height:50px;
+	text-align: center;
+}
+.numberbox
+{
+	font-size: 140%;
+}
