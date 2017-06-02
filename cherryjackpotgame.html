@@ -8,6 +8,8 @@
 <div class="overall">
 <h1>Cherry Jackpot Game</h1>
 <p>Click once on the 'start Spin' button to start the spinning of the numbers. after 15 Seconds you will be left with 3 numbers in 3 different boxes. If these 3 numbers happen to be equal, your score increases by 1 unit else it decreases by 1 unit. During the spin, you can click on the 'stop spin' to stop the spin in the middle with some 3 numbers.</p>
+<br>
+
 <script type="text/javascript">
 
 var s=0;
@@ -16,9 +18,22 @@ function myFunction()
 {
 	var startTime = new Date().getTime();
 	 myname=setInterval(function(x,y,z){
-x=Math.floor(Math.random()*5);
+if((s<=-5)&&(s>-10))
+{x=Math.floor(Math.random()*3);
+y=Math.floor(Math.random()*3);
+z=Math.floor(Math.random()*3);}
+else if(s<=-10)
+{
+	x=Math.floor(Math.random()*2);
+y=Math.floor(Math.random()*2);
+z=Math.floor(Math.random()*2)
+}
+else
+{
+	x=Math.floor(Math.random()*5);
 y=Math.floor(Math.random()*5);
-z=Math.floor(Math.random()*5);
+z=Math.floor(Math.random()*5)
+}
 document.getElementById("box1").value=x;
 document.getElementById("box2").value=y;
 document.getElementById("box3").value=z;
@@ -80,20 +95,21 @@ function reset()
 <br>
 <br>
 <div class="wrap">
-<input type="text" disabled="disabled" id="box1" class="numberbox"><input type="text" disabled="disabled" id="box2" class="numberbox"><input type="text" disabled="disabled" id="box3" class="numberbox">
+<input type="text" disabled="disabled" id="box1" class="numberbox" style="color: white"><input type="text" disabled="disabled" id="box2" class="numberbox" style="color: white"><input type="text" disabled="disabled" id="box3" class="numberbox" style="color: white">
 
 </br>
 </br>
 <br><br>
-<button onclick="myFunction()">Start Spin</button><button onclick="reset()">Reset score</button><button id="stop" onclick="stopspin()">stop spin</button>
+
+<button onclick="myFunction()" style="color: white">Start Spin</button><button onclick="reset()" style="color: white">Reset score</button><button id="stop" onclick="stopspin()" style="color: white">stop spin</button>
 
 <br><br><br>
-<input type="text" disabled="disabled" id="check">
+<input type="text" disabled="disabled" id="check" style="color: white">
 <br><br><br>
 
 <p>Your score is:</p>
 <br>
-<input type="text" disabled="disabled" id="score" value="0">
+<input type="text" disabled="disabled" id="score" value="0" style="color: white">
 <br>
 
 </div>
