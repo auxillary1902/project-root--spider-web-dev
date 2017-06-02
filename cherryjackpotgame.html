@@ -7,7 +7,7 @@
 <body>
 <div class="overall">
 <h1>Cherry Jackpot Game</h1>
-<p>Click once on the 'start Spin' button to start the spinning of the numbers. after 15 Seconds you will be left with 3 numbers in 3 different boxes. If these 3 numbers happen to be equal, your score increases by 1 unit else it decreases by 1 unit. During the spin, you can click on the 'stop spin' to stop the spin in the middle with some 3 numbers.</p>
+<p>Click once on the 'start Spin' button to start the spinning of the numbers. after 15 Seconds you will be left with 3 numbers in 3 different boxes. If these 3 numbers happen to be equal, your score increases by 5 units else it decreases by 1 unit. During the spin, you can click on the 'stop spin' to stop the spin in the middle with some 3 numbers.</p>
 <br>
 
 <script type="text/javascript">
@@ -52,7 +52,7 @@ document.getElementById("box3").value=ka[m];
 	 document.getElementById("check").value="finished rolling";
 	 if((ia[t]==ja[r])&&(ja[r]==ka[m]))
 	 {
-	 	s++;
+	 	s+=5;
 	 	document.getElementById("score").value=s;
 
 	 }
