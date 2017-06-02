@@ -1,0 +1,102 @@
+<html>
+<head><title>Cherry Jackpot game</title>
+<link rel="Shortcut icon" href="favicon.ico" type="image/X-icon">
+<link rel="stylesheet" href="designsheet.css" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<div class="overall">
+<h1>Cherry Jackpot Game</h1>
+<p>Click once on the 'start Spin' button to start the spinning of the numbers. after 15 Seconds you will be left with 3 numbers in 3 different boxes. If these 3 numbers happen to be equal, your score increases by 1 unit else it decreases by 1 unit. During the spin, you can click on the 'stop spin' to stop the spin in the middle with some 3 numbers.</p>
+<script type="text/javascript">
+
+var s=0;
+var ia=[],ja=[],ka=[],t=0,r=0,m=0,myname,x,y,z,click=0;
+function myFunction()
+{
+	var startTime = new Date().getTime();
+	 myname=setInterval(function(x,y,z){
+x=Math.floor(Math.random()*5);
+y=Math.floor(Math.random()*5);
+z=Math.floor(Math.random()*5);
+document.getElementById("box1").value=x;
+document.getElementById("box2").value=y;
+document.getElementById("box3").value=z;
+document.getElementById("check").value="rolling";
+if(new Date().getTime() - startTime > 15000 || click > 0 )
+{
+	ia[t]=x;
+	ja[r]=y;
+	ka[m]=z;
+
+document.getElementById("box1").value=ia[t];
+document.getElementById("box2").value=ja[r];
+document.getElementById("box3").value=ka[m];
+
+	 clearInterval(myname);
+	 document.getElementById("check").value="finished rolling";
+	 if((ia[t]==ja[r])&&(ja[r]==ka[m]))
+	 {
+	 	s++;
+	 	document.getElementById("score").value=s;
+
+	 }
+	 else
+	 {
+	 	s--;
+	 	document.getElementById("score").value=s;
+	 }
+	 t++;
+	 m++;
+	 r++;
+	 click=0;
+	 return;
+	}
+
+		},250); 	
+	
+}
+
+
+
+function stopspin()
+{
+	click++;
+}
+
+
+
+function reset()
+{
+	s=0;
+	document.getElementById("score").value=s;
+}
+
+
+</script>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="wrap">
+<input type="text" disabled="disabled" id="box1" class="numberbox"><input type="text" disabled="disabled" id="box2" class="numberbox"><input type="text" disabled="disabled" id="box3" class="numberbox">
+
+</br>
+</br>
+<br><br>
+<button onclick="myFunction()">Start Spin</button><button onclick="reset()">Reset score</button><button id="stop" onclick="stopspin()">stop spin</button>
+
+<br><br><br>
+<input type="text" disabled="disabled" id="check">
+<br><br><br>
+
+<p>Your score is:</p>
+<br>
+<input type="text" disabled="disabled" id="score" value="0">
+<br>
+
+</div>
+</div>
+</body>
+</html>
